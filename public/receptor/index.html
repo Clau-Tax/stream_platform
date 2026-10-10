@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;800&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+  <title>Hablemos de informática | Ver transmisión</title>
+</head>
+<body>
+  <header class="topbar"><a class="logo" href="/"><svg class="ilu-logo" aria-hidden="true"><use href="/ilustraciones.svg#codigo"/></svg><span class="largo">Hablemos <em>de informática</em></span><span class="corto">HdI</span></a>
+    <nav class="nav" aria-label="Principal"><a href="/" aria-label="Inicio"><svg class="i" aria-hidden="true"><use href="/iconos.svg#home"/></svg><span>Inicio</span></a><a href="/receptor" aria-label="Ver en vivo" class="activo" aria-current="page"><svg class="i" aria-hidden="true"><use href="/iconos.svg#play"/></svg><span>Ver en vivo</span></a></nav></header>
+  <div class="app">
+    <aside class="lateral"><h2>Canales recomendados</h2><div class="lista">
+      <a class="canal" href="#"><span class="avatar" style="--c:var(--vivo)">R</span><span><b>Redes sin miedo</b><small>Redes, 214 viendo</small></span></a>
+      <a class="canal" href="#"><span class="avatar" style="--c:var(--acento)">L</span><span><b>Linux desde cero</b><small>Linux, 98 viendo</small></span></a>
+      <a class="canal" href="#"><span class="avatar" style="--c:var(--ambar)">H</span><span><b>Armando mi PC</b><small>Hardware, 57 viendo</small></span></a>
+    </div></aside>
+    <main>
+      <div class="directo"><section class="escenario">
+        <div class="pantalla"><video id="remoteVideo" autoplay playsinline></video><span class="vivo">En vivo</span><div class="capa" id="capaReacciones" aria-hidden="true"></div><div class="espera trama"><svg class="ilu-espera" aria-hidden="true"><use href="/ilustraciones.svg#terminal"/></svg><p>El canal aún no está al aire</p><small>Pulsa Entrar a la transmisión para conectarte</small></div></div>
+        <div class="controles">
+          <button id="connectBtn">Entrar a la transmisión</button>
+          <button id="disconnectBtn" class="sec" disabled>Salir</button>
+          <div id="status">Presiona "Entrar a la transmisión" para ver la transmisión del emisor.</div>
+        </div>
+      </section>
+        <aside class="chat"><h2>Chat en vivo <button type="button" class="cambiar" id="cambiarNombre" hidden></button></h2><div class="mensajes" id="mensajes" aria-live="polite"><p class="vacio">Los mensajes aparecerán aquí cuando el directo esté al aire.</p></div><div class="reacciones"><button class="reac" data-reaccion="🔥" data-envia disabled aria-label="Reaccionar 🔥">🔥</button><button class="reac" data-reaccion="👏" data-envia disabled aria-label="Reaccionar 👏">👏</button><button class="reac" data-reaccion="❤️" data-envia disabled aria-label="Reaccionar ❤️">❤️</button><button class="reac" data-reaccion="😂" data-envia disabled aria-label="Reaccionar 😂">😂</button><button class="reac" data-reaccion="🎉" data-envia disabled aria-label="Reaccionar 🎉">🎉</button></div>
+          <form class="nombre-paso" id="nombreForm"><label for="nombre">Elige tu nombre para chatear</label><div class="fila"><input id="nombre" maxlength="20" placeholder="Tu nombre" autocomplete="nickname" required /><button type="submit">Entrar</button></div></form>
+          <form class="enviar" id="chatForm" hidden><div class="fila"><input name="texto" maxlength="200" placeholder="Escribe un mensaje" autocomplete="off" aria-label="Mensaje" data-envia disabled /><button type="submit" data-envia disabled aria-label="Enviar"><svg class="i" aria-hidden="true"><use href="/iconos.svg#send"/></svg></button></div></form></aside></div>
+      <section class="info">
+        <span class="avatar grande">H</span>
+        <div><h1>Hablemos de informática</h1>
+          <p class="meta"><span><svg class="i" aria-hidden="true"><use href="/iconos.svg#eye"/></svg> <span id="contadorInfo">Sin espectadores</span></span><span>Programación</span><span>Español</span></p>
+          <p>Un espacio para resolver dudas de informática: programación, redes, hardware y seguridad. Pregunta en el chat y lo vemos en vivo.</p>
+          <div class="etiquetas"><a class="etiqueta" href="#">Programación</a><a class="etiqueta" href="#">Redes</a><a class="etiqueta" href="#">Preguntas en vivo</a></div></div>
+        <button class="seguir sec" id="seguirBtn" aria-pressed="false"><svg class="i" aria-hidden="true"><use href="/iconos.svg#heart"/></svg><span>Seguir</span></button>
+      </section>
+    </main>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+  <script src="/firebase-config.js"></script>
+  <script src="/receptor/receptor.js"></script>
+  <script src="/ui.js"></script>
+  <script src="/interaccion.js"></script>
+</body>
+</html>

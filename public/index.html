@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;800&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+  <title>Hablemos de informática | Transmisiones en vivo</title>
+</head>
+<body>
+  <header class="topbar"><a class="logo" href="/"><svg class="ilu-logo" aria-hidden="true"><use href="/ilustraciones.svg#codigo"/></svg><span class="largo">Hablemos <em>de informática</em></span><span class="corto">HdI</span></a>
+    <nav class="nav" aria-label="Principal"><a href="/" aria-label="Inicio" class="activo" aria-current="page"><svg class="i" aria-hidden="true"><use href="/iconos.svg#home"/></svg><span>Inicio</span></a><a href="/receptor" aria-label="Ver en vivo"><svg class="i" aria-hidden="true"><use href="/iconos.svg#play"/></svg><span>Ver en vivo</span></a></nav></header>
+
+  <section class="portada">
+    <div>
+      <h1>Aprende informática <em>en vivo</em></h1>
+      <p>Dudas, tutoriales y charlas sobre programación, redes y hardware. Entra al directo y pregunta en el chat.</p>
+      <div class="acciones"><a class="btn-link" href="/receptor">Ver en vivo</a></div>
+    </div>
+    <a class="destacado trama" href="/receptor" style="--c:var(--ambar)"><svg class="ilu-destacado" aria-hidden="true"><use href="/ilustraciones.svg#terminal"/></svg>
+      <div><h2>Hablemos de informática: dudas en vivo</h2><small>Programación, en directo ahora</small></div>
+    </a>
+  </section>
+
+  <section class="seccion">
+    <h2>Explora por tema</h2><div class="categorias" role="group" aria-label="Filtrar por tema"><button aria-pressed="true">Todo</button><button aria-pressed="false">Programación</button><button aria-pressed="false">Redes</button><button aria-pressed="false">Hardware</button><button aria-pressed="false">Seguridad</button><button aria-pressed="false">Linux</button><button aria-pressed="false">Inteligencia artificial</button></div>
+    <h2 style="margin-top:2rem">En vivo ahora</h2>
+    <div class="rejilla">
+      <a class="tarjeta" data-cat="Programación" href="/receptor"><div class="miniatura trama" style="--c:var(--acento)"><svg class="ilu" aria-hidden="true"><use href="/ilustraciones.svg#terminal"/></svg><span class="vivo">En vivo</span><span class="vistas">312 viendo</span></div><div class="datos"><span class="avatar" style="--c:var(--acento)">P</span><div><h3>Python desde cero: tu primer programa</h3><small>Programación</small></div></div></a>
+      <a class="tarjeta" data-cat="Redes" href="/receptor"><div class="miniatura trama" style="--c:var(--ambar)"><svg class="ilu" aria-hidden="true"><use href="/ilustraciones.svg#red"/></svg><span class="vivo">En vivo</span><span class="vistas">214 viendo</span></div><div class="datos"><span class="avatar" style="--c:var(--ambar)">R</span><div><h3>Cómo viaja un mensaje por internet</h3><small>Redes</small></div></div></a>
+      <a class="tarjeta" data-cat="Hardware" href="/receptor"><div class="miniatura trama" style="--c:var(--texto)"><svg class="ilu" aria-hidden="true"><use href="/ilustraciones.svg#chip"/></svg><span class="vivo">En vivo</span><span class="vistas">98 viendo</span></div><div class="datos"><span class="avatar" style="--c:var(--texto)">H</span><div><h3>Armando una PC paso a paso</h3><small>Hardware</small></div></div></a>
+      <a class="tarjeta" data-cat="Seguridad" href="/receptor"><div class="miniatura trama" style="--c:var(--acero)"><svg class="ilu" aria-hidden="true"><use href="/ilustraciones.svg#candado"/></svg><span class="vivo">En vivo</span><span class="vistas">57 viendo</span></div><div class="datos"><span class="avatar" style="--c:var(--acero)">S</span><div><h3>Contraseñas seguras y verificación en dos pasos</h3><small>Seguridad</small></div></div></a>
+    </div>
+  <p id="vacio" hidden>Aún no hay canales en este tema.</p></section>
+
+  <footer class="pie"><svg class="ilu-pie" aria-hidden="true"><use href="/ilustraciones.svg#codigo"/></svg>Hablemos de informática, un proyecto de clase hecho en Guatemala.</footer>
+<script>
+// Filtro por tema: muestra solo las tarjetas de la categoría elegida
+const chips=document.querySelectorAll('.categorias button'),tarjetas=document.querySelectorAll('.tarjeta'),vacio=document.getElementById('vacio');
+chips.forEach(b=>b.addEventListener('click',()=>{
+  chips.forEach(x=>x.setAttribute('aria-pressed',x===b));
+  let n=0;tarjetas.forEach(t=>{const ok=b.textContent==='Todo'||t.dataset.cat===b.textContent;t.hidden=!ok;n+=ok});
+  vacio.hidden=n>0;
+}));
+</script>
+</body>
+</html>

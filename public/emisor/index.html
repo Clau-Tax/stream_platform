@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;800&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+  <title>Hablemos de informática | Transmitir</title>
+</head>
+<body>
+  <header class="topbar"><span class="logo"None><svg class="ilu-logo" aria-hidden="true"><use href="/ilustraciones.svg#codigo"/></svg><span class="largo">Hablemos <em>de informática</em></span><span class="corto">HdI</span></span>
+    <span class="rol"><svg class="i" aria-hidden="true"><use href="/iconos.svg#radio"/></svg>Panel del streamer</span></header>
+  <div class="app">
+    <aside class="lateral"><h2>Canales recomendados</h2><div class="lista">
+      <a class="canal" href="#"><span class="avatar" style="--c:var(--vivo)">R</span><span><b>Redes sin miedo</b><small>Redes, 214 viendo</small></span></a>
+      <a class="canal" href="#"><span class="avatar" style="--c:var(--acento)">L</span><span><b>Linux desde cero</b><small>Linux, 98 viendo</small></span></a>
+      <a class="canal" href="#"><span class="avatar" style="--c:var(--ambar)">H</span><span><b>Armando mi PC</b><small>Hardware, 57 viendo</small></span></a>
+    </div></aside>
+    <main>
+      <div class="directo"><section class="escenario">
+        <div class="pantalla"><video id="localVideo" autoplay muted playsinline></video><span class="vivo">En vivo</span><div class="capa" id="capaReacciones" aria-hidden="true"></div><span class="vistas" id="contador">0 viendo</span><div class="espera trama"><svg class="ilu-espera" aria-hidden="true"><use href="/ilustraciones.svg#terminal"/></svg><p>Tu cámara aparecerá aquí</p><small>Pulsa Salir al aire y acepta el permiso del navegador</small></div></div>
+        <div class="controles">
+          <button id="startBtn">Salir al aire</button>
+          <button id="stopBtn" class="sec" disabled>Terminar</button>
+          <button id="shareBtn" class="sec" disabled aria-pressed="false"><svg class="i" aria-hidden="true"><use href="/iconos.svg#monitor"/></svg><span>Compartir pantalla</span></button>
+          <button id="micBtn" class="sec" disabled aria-pressed="false"><svg class="i" aria-hidden="true"><use href="/iconos.svg#mic"/></svg><span>Micrófono</span></button>
+          <button id="camBtn" class="sec" disabled aria-pressed="false"><svg class="i" aria-hidden="true"><use href="/iconos.svg#video"/></svg><span>Cámara</span></button>
+          <div id="status">Presiona "Salir al aire" para comenzar.</div>
+        </div>
+      </section>
+        <aside class="chat"><h2>Chat en vivo <button type="button" class="cambiar" id="cambiarNombre" hidden></button></h2><div class="mensajes" id="mensajes" aria-live="polite"><p class="vacio">Los mensajes aparecerán aquí cuando el directo esté al aire.</p></div>
+          <form class="nombre-paso" id="nombreForm"><label for="nombre">Tu nombre en el chat</label><div class="fila"><input id="nombre" maxlength="20" placeholder="Tu nombre" autocomplete="nickname" required /><button type="submit">Guardar</button></div></form>
+          <form class="enviar" id="chatForm" hidden><div class="fila"><input name="texto" maxlength="200" placeholder="Escribe un mensaje" autocomplete="off" aria-label="Mensaje" data-envia disabled /><button type="submit" data-envia disabled aria-label="Enviar"><svg class="i" aria-hidden="true"><use href="/iconos.svg#send"/></svg></button></div></form></aside></div>
+      <section class="info">
+        <span class="avatar grande">Tú</span>
+        <div><h1>Hablemos de informática</h1>
+          <p>Revisa tu cámara y micrófono antes de salir al aire. Quienes entren a Ver en vivo te verán al instante.</p>
+          <div class="etiquetas"><a class="etiqueta" href="#">Programación</a><a class="etiqueta" href="#">Español</a></div></div>
+      </section>
+    </main>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+  <script src="/firebase-config.js"></script>
+  <script src="/emisor/emisor.js"></script>
+  <script src="/ui.js"></script>
+  <script src="/interaccion.js"></script>
+  <script src="/pantalla.js"></script>
+</body>
+</html>

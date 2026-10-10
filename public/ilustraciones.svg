@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+<!-- Marca del canal: </> sobre un cuadrado redondeado -->
+<symbol id="codigo" viewBox="0 0 200 200">
+  <rect x="10" y="10" width="180" height="180" rx="40" fill="var(--acento)"/>
+  <path d="M82 68L48 100l34 32M118 68l34 32-34 32M108 60L92 140" fill="none" stroke="var(--fondo)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<!-- Un dibujo por tema: formas en color de fondo con detalles del color de la tarjeta (--c) -->
+<symbol id="terminal" viewBox="0 0 200 150">
+  <rect x="20" y="16" width="160" height="116" rx="10" fill="var(--fondo)"/>
+  <circle cx="36" cy="32" r="4" fill="var(--c)"/><circle cx="50" cy="32" r="4" fill="var(--c)"/><circle cx="64" cy="32" r="4" fill="var(--c)"/>
+  <path d="M40 68l22 16-22 16" fill="none" stroke="var(--c)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M76 100h44" stroke="var(--c)" stroke-width="8" stroke-linecap="round"/>
+</symbol>
+<symbol id="red" viewBox="0 0 200 150">
+  <path d="M100 36L48 108M100 36l52 72M48 108h104" stroke="var(--fondo)" stroke-width="6" fill="none"/>
+  <circle cx="100" cy="36" r="18" fill="var(--fondo)"/><circle cx="48" cy="108" r="18" fill="var(--fondo)"/><circle cx="152" cy="108" r="18" fill="var(--fondo)"/>
+  <circle cx="100" cy="36" r="6" fill="var(--c)"/><circle cx="48" cy="108" r="6" fill="var(--c)"/><circle cx="152" cy="108" r="6" fill="var(--c)"/>
+</symbol>
+<symbol id="chip" viewBox="0 0 200 150">
+  <rect x="55" y="35" width="90" height="80" rx="8" fill="var(--fondo)"/><rect x="76" y="58" width="48" height="34" rx="4" fill="var(--c)"/>
+  <path d="M70 22v13M90 22v13M110 22v13M130 22v13M70 115v13M90 115v13M110 115v13M130 115v13M42 55h13M42 75h13M42 95h13M145 55h13M145 75h13M145 95h13" stroke="var(--fondo)" stroke-width="6" stroke-linecap="round"/>
+</symbol>
+<symbol id="candado" viewBox="0 0 200 150">
+  <path d="M72 66V50a28 28 0 0 1 56 0v16" fill="none" stroke="var(--fondo)" stroke-width="12" stroke-linecap="round"/>
+  <rect x="50" y="64" width="100" height="70" rx="10" fill="var(--fondo)"/>
+  <circle cx="100" cy="93" r="9" fill="var(--c)"/><path d="M100 100v16" stroke="var(--c)" stroke-width="7" stroke-linecap="round"/>
+</symbol>
+</svg>
